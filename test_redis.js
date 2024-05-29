@@ -1,16 +1,14 @@
 const redis = require('redis');
 const { redisHost, redisPort, redisPassword } = require('./config');
 
-// Crear un cliente Redis
 const client = redis.createClient({
-    socket: {
-      host: redisHost,
-      port: redisPort
-    },
-    password: redisPassword
-  });
+  socket: {
+    host: redisHost,
+    port: redisPort
+  },
+  password: redisPassword
+});
 
-// Manejar eventos de error y conexión
 client.on('error', (err) => console.log('Error de Redis Client', err));
 client.on('connect', () => console.log('Conexión exitosa con Redis'));
 

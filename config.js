@@ -1,6 +1,8 @@
-const redisHost = 'redis-19411.c283.us-east-1-4.ec2.redns.redis-cloud.com';
-const redisPort = 19411;
-const redisPassword = 'Wg8Y6L8yvqHddnmPmWSax22gPRWcJZoP';
+require('dotenv').config();
+
+const redisHost = process.env.REDIS_HOST;
+const redisPort = process.env.REDIS_PORT;
+const redisPassword = process.env.REDIS_PASSWORD;
 
 module.exports = {
   redisHost,
